@@ -37,8 +37,8 @@ const stopRecognition = async (req, res) => {
   if (req.body.data) {
     var input = req.body.data;
     // console.log(input.includes("sam"))
-    if (req.body.data.toLowerCase().includes('sam')) {
-      input = req.body.data.replace(/sam/gi, '');
+    // if (req.body.data.toLowerCase().includes('sam')) {
+      // input = req.body.data.replace(/sam/gi, '');
     
       await openai
         .createChatCompletion({
@@ -53,9 +53,9 @@ const stopRecognition = async (req, res) => {
         .catch((error) => {
           console.log(error);
         });
-    } else {
-      console.log("No action taken. Input does not contain 'sam'.");
-    }
+    // } else {
+    //   console.log("No action taken. Input does not contain 'sam'.");
+    // }
     
     
   } else {
